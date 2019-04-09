@@ -12,6 +12,31 @@ The program is run by updating the integer _n_ as follows:
 [1]: https://en.wikipedia.org/wiki/FRACTRAN
 [2]: https://en.wikipedia.org/wiki/John_Horton_Conway
 
+## Elements of FRACTRAN code
+
+FRACTRAN code has three parts:
+
+- n, an optional positive starting integer
+- n1/d1, n2/d2, ..., nk/dk, a sequence of fractions
+- m, the maximum number of iterations (if omitted, default 100)
+
+Example code:
+
+```frac
+2 17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11 15/14 15/2 55/1 15
+```
+
+This fractran code starts with `n=2` and executes over the following sequence of fractions until `m=15` numbers are generated or until the sequence terminates.
+
+### Anatomy of a .frac file
+
+```bash
+1    2 17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11 15/14 15/2 55/1 15
+2    This program generates 15 prime numbers.
+```
+
+FRACTRAN code should be on the first line of the file and only span one line. Only the first line of the file is read by the interpreter, so the rest of the file can be used to comment on the code.
+
 ## Usage
 
 The interpreter can execute FRACTRAN code a few ways.
@@ -46,31 +71,6 @@ It can also be imported as a module for FRACTRAN execution:
 >>> print(result)
 [2, 3]
 ```
-
-### Elements of FRACTRAN code
-
-FRACTRAN code has three parts:
-
-- n, an optional positive starting integer
-- n1/d1, n2/d2, ..., nk/dk, a sequence of fractions
-- m, the maximum number of iterations (if omitted, default 100)
-
-Example code:
-
-```frac
-2 17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11 15/14 15/2 55/1 15
-```
-
-This fractran code starts with `n=2` and executes over the following sequence of fractions until `m=15` numbers are generated or until the sequence terminates.
-
-### Anatomy of a .frac file
-
-```bash
-1    2 17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11 15/14 15/2 55/1 15
-2    This program generates 15 prime numbers.
-```
-
-FRACTRAN code should be on the first line of the file and only span one line. Only the first line of the file is read by the interpreter, so the rest of the file can be used to comment on the code.
 
 ## License
 
