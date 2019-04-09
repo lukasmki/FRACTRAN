@@ -26,7 +26,24 @@ Example code:
 2 17/91 78/85 19/51 23/38 29/33 77/29 95/23 77/19 1/17 11/13 13/11 15/14 15/2 55/1 15
 ```
 
-This fractran code starts with `n=2` and executes over the following sequence of fractions until `m=15` numbers are generated or until the sequence terminates.
+This FRACTRAN code starts with `n=2` and executes over the following sequence of fractions until `m=15` numbers are generated or until the sequence terminates.
+
+The FRACTRAN interpreter can also handle mathematical operations.
+
+For example, consider the FRACTRAN program:
+
+    2**a*3**b 2/3
+
+which yields
+
+    [2^a * 3^b, 2^(a-1) * 3^(b+1), 2^(a-2) * 3^(b+2), ..., 2^(0) * 3^(a+b)]
+
+The interpreter evaluates each numerator, denominator, and starting number before executing.
+
+```python
+>>> fractran("2**4*3**1 3/2")
+[48, 72, 108, 162, 243]
+```
 
 ### Anatomy of a .frac file
 
